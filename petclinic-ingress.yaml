@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: petclinic-app
+  labels:
+    app: petclinic-app
+spec:
+  rules:
+  - host: petclinic-app-eduk8s-labs-w05-s084.reg-prod-a5a0c0f.tanzu-labs.esp.vmware.com
+    http:
+      paths:
+      - path: "/"
+        pathType: Prefix
+        backend:
+          service:
+            name: petclinic-app
+            port: 
+              number: 80
